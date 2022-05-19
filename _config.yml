@@ -1,6 +1,6 @@
-title: Data Science in a nutshell
-email: paul.cayet@icloud.com
-description: In this blog you will find some of my Data Science projects
+title: Datascience Blog
+email: paul.cayet@gmail.com
+description: Projects about data science
 author: Paul Cayet
 baseurl: ""
 url: "https://paul-cayet.github.io"
@@ -23,4 +23,3 @@ plugins:
   - jekyll-feed
   - jekyll-paginate
   - jekyll-sitemap ## Uncomment this line to silently generate a sitemaps.org compliant sitemap for your Jekyll site
-highlighter: rouge

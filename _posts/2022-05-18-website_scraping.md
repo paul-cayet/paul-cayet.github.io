@@ -12,8 +12,9 @@ Quite a few options are accessible to improve our vocabulary, but they may not b
 
 ## 1. Extracting vocabulary
 
-We can access the most frequent Italian dictionary requests by clicking on the different numbers. For instance, let's try [the first one](https://www.linguee.com/italian-english/topitalian/1-200.html) (1-200). \
+We can access the most frequent Italian dictionary requests by clicking on the different numbers. For instance, let's try the first one (1-200). \
 We can notice a few things. First of all, the URL consists of a base URL + some additionnal information about the frequency. \
+https://www.linguee.com/italian-english/topitalian/1-200.html \
 Its simple structure will allow us to simply parse through the different pages. 
 
 ![first_voc.png](\img\posts\web_scrapping\first_voc.png)

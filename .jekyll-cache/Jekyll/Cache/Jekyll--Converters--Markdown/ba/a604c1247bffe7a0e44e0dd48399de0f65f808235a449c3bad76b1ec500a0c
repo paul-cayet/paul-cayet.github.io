@@ -1,11 +1,12 @@
-I"çU<p>Quite a few options are accessible to improve our vocabulary, but they may not be convenient. In this tutorial, we will be using some web scraping tools to build a database with the most frequent dictionnary request on Linguee.</p>
+I"ÜU<p>Quite a few options are accessible to improve our vocabulary, but they may not be convenient. In this tutorial, we will be using some web scraping tools to build a database with the most frequent dictionnary request on Linguee.</p>
 
 <p><img src="\img\posts\web_scrapping\url_example.png" alt="url_example.png" /></p>
 
 <h2 id="1-extracting-vocabulary">1. Extracting vocabulary</h2>
 
-<p>We can access the most frequent Italian dictionary requests by clicking on the different numbers. For instance, let‚Äôs try <a href="https://www.linguee.com/italian-english/topitalian/1-200.html">the first one</a> (1-200). <br />
+<p>We can access the most frequent Italian dictionary requests by clicking on the different numbers. For instance, let‚Äôs try the first one (1-200). <br />
 We can notice a few things. First of all, the URL consists of a base URL + some additionnal information about the frequency. <br />
+https://www.linguee.com/italian-english/topitalian/1-200.html <br />
 Its simple structure will allow us to simply parse through the different pages.</p>
 
 <p><img src="\img\posts\web_scrapping\first_voc.png" alt="first_voc.png" /></p>
