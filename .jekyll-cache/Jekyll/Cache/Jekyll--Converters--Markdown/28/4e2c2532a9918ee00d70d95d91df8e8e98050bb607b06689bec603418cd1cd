@@ -1,4 +1,4 @@
-I"ݖ<p>The traveling salesman problem (TSP) asks the following question: “Given a list of n cities, among which an origin city, and the distances between each pair of cities, what is the shortest possible route that visits each city exactly once and returns to the origin city?” This is an important NP-hard combinatorial optimization problem, particularly in the fields of operations research and theoretical computer science. The problem was first formulated in 1930 and is one of the most intensively studied problems in discrete optimization. <br />
+I"C�<p>The traveling salesman problem (TSP) asks the following question: “Given a list of n cities, among which an origin city, and the distances between each pair of cities, what is the shortest possible route that visits each city exactly once and returns to the origin city?” This is an important NP-hard combinatorial optimization problem, particularly in the fields of operations research and theoretical computer science. The problem was first formulated in 1930 and is one of the most intensively studied problems in discrete optimization. <br />
 We are going to solve this problem using different approaches : in this post, we will use heuristics, and in an upcoming post we will improve our solutions using metaheuristics.</p>
 
 <p><img src="\img\posts\combinatorial1\tsp_img.png" alt="tsp_img.png" /></p>
@@ -9,9 +9,9 @@ We are going to solve this problem using different approaches : in this post, we
 <br />
 Unfortunatly for us, altough the TSP problem does have a linear formulation, we can’t solve it optimally with a continuous constraint relaxation method.
 <br />
-And it is now that the real difficulties begin to appear, because the naive solution’s complexity is $O(n!)$ (that’s 77 years to solve an instance with 20 cities with a frequency of 1GHz). 
+And it is now that the real difficulties begin to appear, because the naive solution’s complexity is <img src="\img\posts\combinatorial1\eq_fac.png" alt="n!" /> (that’s 77 years to solve an instance with 20 cities with a frequency of 1GHz). 
 <br />
-The DP (dynamic programming) version algorithm (Bellman-Held-Karp algorithm) will have the complexity of $O(2^n * n^2)$. By reducing the complexity from factorial to exponential, if the size of n is relatively small, the problem can be solvable (this time we can solve a 50 cities-sized instance in only 90 years… maybe we can do better 😅).
+The DP (dynamic programming) version algorithm (Bellman-Held-Karp algorithm) will have the complexity of <img src="\img\posts\combinatorial1\eq_dyn.png" alt="2^n*n^2" />. By reducing the complexity from factorial to exponential, if the size of n is relatively small, the problem can be solvable (this time we can solve a 50 cities-sized instance in only 90 years… maybe we can do better 😅).
 <br />
 So instead of searching an exact solution, we will try to find an approximate one in a much shorter timespan. I am talking about solving a instance with 400 cities in less than a minute. Yes, that’s quite the improvement !</p>
 
