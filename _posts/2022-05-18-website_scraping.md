@@ -8,7 +8,7 @@ background: '/img/posts/web_scrapping/florian-olivo-unsplash.jpg'
 
 Quite a few options are accessible to improve our vocabulary, but they may not be convenient. In this tutorial, we will be using some web scraping tools to build a database with the most frequent dictionnary request on Linguee. 
 
-![url_example.png](\img\posts\web_scrapping\url_example.png)
+<img src="\img\posts\web_scrapping\url_example.png" alt="url_example" width="100%"/>
 
 ## 1. Extracting vocabulary
 
