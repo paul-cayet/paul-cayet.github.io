@@ -1,0 +1,3 @@
+I"�<p>The traveling salesman problem (TSP) asks the following question: “Given a list of n cities, among which an origin city, and the distances between each pair of cities, what is the shortest possible route that visits each city exactly once and returns to the origin city?” This is an important NP-hard combinatorial optimization problem, particularly in the fields of operations research and theoretical computer science. The problem was first formulated in 1930 and is one of the most intensively studied problems in discrete optimization. <br />
+In the <a href="https://paul-cayet.github.io/2022/05/19/sa_article1.html">previous post</a>, we used heuristics to solve the TSP problem. In this post we will improve our solutions using metaheuristics.</p>
+:ET

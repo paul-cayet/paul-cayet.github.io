@@ -1,7 +1,7 @@
-I"ݖ<p>The traveling salesman problem (TSP) asks the following question: “Given a list of n cities, among which an origin city, and the distances between each pair of cities, what is the shortest possible route that visits each city exactly once and returns to the origin city?” This is an important NP-hard combinatorial optimization problem, particularly in the fields of operations research and theoretical computer science. The problem was first formulated in 1930 and is one of the most intensively studied problems in discrete optimization. <br />
+I"�<p>The traveling salesman problem (TSP) asks the following question: “Given a list of n cities, among which an origin city, and the distances between each pair of cities, what is the shortest possible route that visits each city exactly once and returns to the origin city?” This is an important NP-hard combinatorial optimization problem, particularly in the fields of operations research and theoretical computer science. The problem was first formulated in 1930 and is one of the most intensively studied problems in discrete optimization. <br />
 We are going to solve this problem using different approaches : in this post, we will use heuristics, and in an upcoming post we will improve our solutions using metaheuristics.</p>
 
-<p><img src="\img\posts\combinatorial1\tsp_img.png" alt="tsp_img.png" /></p>
+<p><img src="\img\posts\combinatorial1\tsp_img.png" alt="tsp_img" width="100%" /></p>
 
 <h2 id="1-exact-methods">1. Exact methods</h2>
 
@@ -9,11 +9,11 @@ We are going to solve this problem using different approaches : in this post, we
 <br />
 Unfortunatly for us, altough the TSP problem does have a linear formulation, we can’t solve it optimally with a continuous constraint relaxation method.
 <br />
-And it is now that the real difficulties begin to appear, because the naive solution’s complexity is $O(n!)$ (that’s 77 years to solve an instance with 20 cities with a frequency of 1GHz). 
+And it is now that the real difficulties begin to appear, because the naive solution’s complexity is <img src="\img\posts\combinatorial1\eq_fac.png" alt="n!" /> (that’s 77 years to solve an instance with 20 cities with a frequency of 1GHz). 
 <br />
-The DP (dynamic programming) version algorithm (Bellman-Held-Karp algorithm) will have the complexity of $O(2^n * n^2)$. By reducing the complexity from factorial to exponential, if the size of n is relatively small, the problem can be solvable (this time we can solve a 50 cities-sized instance in only 90 years… maybe we can do better 😅).
+The DP (dynamic programming) version algorithm (Bellman-Held-Karp algorithm) will have the complexity of <img src="\img\posts\combinatorial1\eq_dyn.png" alt="2^n*n^2" />. By reducing the complexity from factorial to exponential, if the size of n is relatively small, the problem can be solvable (this time we can solve a 50 cities-sized instance in only 90 years… maybe we can do better 😅).
 <br />
-So instead of searching an exact solution, we will try to find an approximate one in a much shorter timespan. I am talking about solving a instance with 400 cities in less than a minute. Yes, that’s quite the improvement !</p>
+So instead of searching an exact solution, we will try to find an approximate one in a much shorter timespan. I am talking about solving a instance with 400 cities in less than 30 seconds. Yes, that’s quite the improvement !</p>
 
 <h2 id="2-heuristics">2. Heuristics</h2>
 
@@ -132,10 +132,10 @@ We will use a simple structure to represent our solutions : a list of length $n$
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Minimal cost found : 1491.8 in 1.5 s
 </code></pre></div></div>
 
-<p><img src="\img\posts\combinatorial1\output_11_1.png" alt="png" /></p>
+<p><img src="\img\posts\combinatorial1\output_11_1.png" alt="output_11_1" width="100%" /></p>
 
 <p>Here, we loop over every possible permutation that can be made after having shuffled the permutation list (result quality may vary). Every time we improve the solution, we start again from the beggining of the permutation list. If we loop through the entire loop without seing any improvement, the algorithm is terminated. <br />
-With this algorithm, we can find a solution in one second, with a mean score of 1530 over 20 solutions. The best score was 1333 and the worst was 1815. Running the algorithm multiple times is a way to find a better quality solution.</p>
+With this algorithm, we can find a solution in one second, with a mean score of 1530 over 20 solutions. The best score was 1333 and the worst was 1815. The score are not optimal because the algorithm was stuck in a local minimum. Running the algorithm multiple times is a way to find a better quality solution.</p>
 
 <h2 id="best-fit">Best Fit</h2>
 
@@ -164,7 +164,7 @@ With this algorithm, we can find a solution in one second, with a mean score of 
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Minimal cost found : 1589.5 in 2.8 s
 </code></pre></div></div>
 
-<p><img src="\img\posts\combinatorial1\output_14_1.png" alt="png" /></p>
+<p><img src="\img\posts\combinatorial1\output_14_1.png" alt="output_14_1" width="100%" /></p>
 
 <p>This time, we solve the problem using a best fit approach. At each iteration, we choose the permutation which improves the solution the most, until we observe no further improvement. <br />
 As expected, this algorithm is a little bit slower, and the end result is not particularly great… maybe some randomness is neeeded 😀</p>
@@ -189,7 +189,7 @@ As expected, this algorithm is a little bit slower, and the end result is not pa
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Minimal cost found : 1351.3 in 0.006 s
 </code></pre></div></div>
 
-<p><img src="\img\posts\combinatorial1\output_17_1.png" alt="png" /></p>
+<p><img src="\img\posts\combinatorial1\output_17_1.png" alt="output_17_1" width="100%" /></p>
 
 <p>Here we use a greedy algorithm by always choosing the nearest available city. This is much better than previous solutions : in only 6ms, the algorithm was able to find a solution that beats the previous ones ! But still we can observe some crossing, which means that the solution is still sub-optimal</p>
 
@@ -218,7 +218,7 @@ As expected, this algorithm is a little bit slower, and the end result is not pa
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Minimal cost found : 1667.6 in 0.001 s
 </code></pre></div></div>
 
-<p><img src="\img\posts\combinatorial1\output_20_1.png" alt="png" /></p>
+<p><img src="\img\posts\combinatorial1\output_20_1.png" alt="output_20_1" width="100%" /></p>
 
 <p>This is once again a very interesting approach, here we project every city on a circle and then join them in a circular way</p>
 
@@ -237,7 +237,7 @@ As expected, this algorithm is a little bit slower, and the end result is not pa
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Minimal cost found : 1329.7 in 1.1 s
 </code></pre></div></div>
 
-<p><img src="\img\posts\combinatorial1\output_24_1.png" alt="png" /></p>
+<p><img src="\img\posts\combinatorial1\output_24_1.png" alt="output_24_1" width="100%" /></p>
 
 <p>Otherwise, we can use other approximate algorithms, such as the Lin-Kernighan algorithm (LK), which uses an operator called λ-opt to modify the solution into a better one. Finally, in the next post we will implement an algorithm called Simulated Annealing, that is a type of metaheuristic algorithm.</p>
 
