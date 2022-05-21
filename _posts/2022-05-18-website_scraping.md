@@ -8,8 +8,7 @@ background: '/img/posts/web_scrapping/florian-olivo-unsplash.jpg'
 
 Quite a few options are accessible to improve our vocabulary, but they may not be convenient. In this tutorial, we will be using some web scraping tools to build a database with the most frequent dictionnary request on Linguee. 
 
-<img src="\img\posts\web_scrapping\url_example.png" alt="url_example" width="100%"/>
-<!-- ![url_example.png]() -->
+![url_example.png](\img\posts\web_scrapping\url_example.png)
 
 ## 1. Extracting vocabulary
 
@@ -18,13 +17,11 @@ We can notice a few things. First of all, the URL consists of a base URL + some 
 https://www.linguee.com/italian-english/topitalian/1-200.html \
 Its simple structure will allow us to simply parse through the different pages. 
 
-<img src="\img\posts\web_scrapping\first_voc.png" alt="first_voc" width="100%"/>
-<!-- ![first_voc.png](\img\posts\web_scrapping\first_voc.png) -->
+![first_voc.png](\img\posts\web_scrapping\first_voc.png)
 
 Secondly, we can see that the proposed structure of vocabulary follows some sort of list or table. Let's go deeper by taking a look at the html code.
 
-<img src="\img\posts\web_scrapping\voc_html.png" alt="voc_html" width="100%"/>
-<!-- ![voc_html.png](\img\posts\web_scrapping\voc_html.png) -->
+![voc_html.png](\img\posts\web_scrapping\voc_html.png)
 
 By inspecting the first element, we get the corresponding part of the HTML code. The words are contained in a section with the class name "text top", and more specificaly in a table cell tag. \
 Now that we obtained all those informations, it's time to build our scraper !
