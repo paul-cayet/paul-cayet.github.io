@@ -1,0 +1,10 @@
+I"a<p>Social media are now the main source of information for many people. In fact as of February 2021, 38% of adults use social media as a source of news in France, and 76% in Kenya. Regardless of the veracity of the news in twitter, it is a great place to get general news, and especially what people think about it.<br />
+So today I asked myself : what is going on in the world, and are the news great or not. To answer these questions, we need 2 things :</p>
+<ul>
+  <li>a way to collect tweets from tweeter</li>
+  <li>a way to determine if the tweets are conveying a general positive sentiment or not
+<br />
+<br />
+You guessed it, in today’s post we are going to use both a twitter scraper and a sentiment analysis tool. In our case, the scraper will be hand-made (you will see why), and as for the sentiment analysis model we will use RoBERTa-Large.</li>
+</ul>
+:ET
